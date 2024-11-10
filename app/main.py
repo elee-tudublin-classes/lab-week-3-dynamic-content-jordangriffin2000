@@ -54,7 +54,7 @@ async def apod(request: Request):
 
     response = await requests_client.get(config("NASA_APOD_URL") + config("NASA_API_KEY"))
 
-    return templates.TemplateResponse(request=request, name="apod.html")
+    return templates.TemplateResponse("apod.html", {"request": request, "data": response.json() })
 
 @app.get("/params", response_class=HTMLResponse)
 async def params(request: Request, name : str | None = ""):

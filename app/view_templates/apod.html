@@ -9,9 +9,9 @@
 <body>
     {% include "./partials/nav.html" ignore missing with context %}
 
-    <h1>Apod Page</h1>
-    
-    
+    <h1>NASA Astronomy Picture of the Day - {{data.date}}</h1>
+    <img src="{{data.hdurl}}" alt="NASA IMAGE", width="300", style="display: block; margin: 0 auto;">
+    <p>{{data.explanation}}</p>
     {% include "./partials/dependencies.html" ignore missing with context %}
 </body>
 </html>
